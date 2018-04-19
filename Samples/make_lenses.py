@@ -19,8 +19,6 @@
 # DISCLAIMER: ABSOLUTELY NO WARRANTY EXPRESS OR IMPLIED.
 # AUTHOR ASSUMES NO LIABILITY IN CONNECTION WITH THIS COMPUTER CODE.
 #
-import params
-
 
 # Import the necessary packages
 import numpy as np
@@ -92,9 +90,10 @@ def make_a_lens():
 lenses = []
 for i in np.arange(1,40):
     _l = make_a_lens()
+    imageio.imsave('./Samples/pix/lens/{}.jpg'.format(i),_l)
     lenses.append(_l)
 
 lenses = np.array(lenses)
-print(lenses.shape)
+np.save("lenses",lenses)
 
 
